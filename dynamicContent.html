@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Content</title>
+    <script language="javascript" type="text/javascript">
+        function changeContent()
+        {
+            var theDiv = document.getElementById("content");
+            theDiv.innerHTML = "<h1> Look my Master! Changed Content!</h1>";
+        }
+    </script>
+</head>
+<body>
+    <div id="content">
+        <p>Here is some HTML content My Master</p>
+    </div>
+    <input type="button" value="Change Content" onclick="changeContent()"/>
+    
+</body>
+</html>

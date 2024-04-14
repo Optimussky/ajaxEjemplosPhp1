@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    
+
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Ajax</title>
+    
+    
+
+    <script language="javascript" type="text/javascript">
+        var xmlhttp;
+
+        function getNum(){
+            xmlhttp = new XMLHttpRequest();
+            // Vamos a crear un listener
+            xmlhttp.onreadystatechange = callback;
+
+            xmlhttp.open("GET", "random.php", true);
+            xmlhttp.send();
+
+        }
+
+        // Cuando la información regrese del servidor
+        function callback()
+        {
+            console.log("Ready State: " + xmlhttp.readyState + "\nStatus" + xmlhttp.status)
+            if(xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+                
+                // aquí iría el request
+                document.getElementById('result').innerHTML = xmlhttp.responseText;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="result">
+    </div>
+    <input type="button" value="Get Random Number" onclick="getNum()"/>
+    
+    
+</body>
+</html>
